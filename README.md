@@ -1,5 +1,3 @@
----
-
 ## 📁 File Descriptions
 
 * `main.py`: The main execution script for the project.
