@@ -25,9 +25,9 @@ parser.add_argument('--beta', type=int, default=100, help='/beta')
 parser.add_argument('--inter', type=int, default=6, help='the interval is [-inter, inter]')
 parser.add_argument('--nx', type=int, default=64, help='Sampling')
 parser.add_argument('--omega', type=float, default=0.9, help='omega')
-o_min = 0.89
-o_max = 0.9
-num1 = 3
+o_min = 0.5
+o_max = 0.5
+num1 = 1
 
 
 args = parser.parse_args()
@@ -104,7 +104,7 @@ def plot_3D(model, params, step, num):
     ax.set_ylabel('$\\textbf{y}$', fontsize=35, labelpad=-5)
     
 
-    plt.savefig('D:/用户/研究生文章/BSE/实验/实验结果/' + f'exam_{num}_{step}.png') # 建议添加.png后缀
+    plt.savefig('~/data/'+f'exam_{num}_{step}.png') # 建议添加.png后缀
     plt.close()
 
 
@@ -272,7 +272,7 @@ def main():
     params["width"] = args.n  # Width of layers
     params["depth"] = args.d  # Hidden Layer: depth+10
     params["dd"] = 2  # Output
-    params["lr"] = 0.005  # Learning rate  0.005
+    params["lr"] = 0.004  # Learning rate  0.005
     params["beta"] = args.beta
     params["Writestep"] = 100
     params["step_size"] = 100  # lr decay
@@ -281,7 +281,7 @@ def main():
     startTime = time.time()
 
     model1 = Net(params, device).to(device)
-    model1 = torch.load('模型/2d_1涡旋.pkl', weights_only=False)
+    model1 = torch.load('~/2d_0.pkl', weights_only=False)
 
     print("Generating network costs %s seconds." % (time.time() - startTime))
     print(params)
@@ -302,3 +302,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
