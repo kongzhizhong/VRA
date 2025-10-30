@@ -1,13 +1,45 @@
-Main Script: The main.py script is the primary program.
+---
 
-Calculation Mode (Parameter: num1):
+## 📁 File Descriptions
 
-num1=1: Calculates the ground state for a single omega value.
+* `main.py`: The main execution script for the project.
+* `adaptive sampling.py`: Implements the adaptive sampling methodology used in the experiments.
+* `2d_0.pkl`: An initial data file used for training the ground state, obtained via a fitting process.
 
-num1 > 1: Enables simultaneous calculations for multiple omega values.
+---
 
-Adaptive Sampling: The adaptive sampling.py script is used to implement the adaptive sampling method.
+## ⚙️ Usage Examples
 
-Initial Value: The 2d_0.pkl script is the suggested one to use for the zero-vortex initial value.
+### Example 1: Calculate Ground State for a Single $\Omega$ Value
 
-Instructions for Example 2.4: To run this example, simply execute the 2d script with num1 set to 1 and omega set to the specific value you wish to compute.
+This example calculates the ground state for a single $\Omega = 0.5$ and reproduces the results shown in **Fig. 4**.
+
+1.  Open **`main.py`** and navigate to lines 28-30.
+2.  Set the parameters as follows:
+    ```python
+    o_min = 0.5
+    o_max = 0.5
+    num1 = 1
+    ```
+3.  Run the script:
+    ```bash
+    python main.py
+    ```
+
+---
+
+### Example 2: Calculate Ground States for Multiple $\Omega$ Values
+
+This example enables simultaneous calculation for a range of $\Omega$ values (from 0.58 to 0.62) and reproduces the results shown in **Fig. 9**.
+
+1.  Open **`main.py`** and navigate to lines 28-30.
+2.  Set the parameters as follows:
+    ```python
+    o_min = 0.58
+    o_max = 0.62
+    num1 = 2
+    ```
+3.  Run the script:
+    ```bash
+    python main.py
+    ```
