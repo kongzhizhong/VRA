@@ -1,7 +1,7 @@
 ## 📁 File Descriptions
 
 * `main.py`: The main execution script for the project.
-* `adaptive sampling.py`: Implements the adaptive sampling methodology used in the experiments.
+* `adaptive_sampling.py`: Implements the adaptive sampling methodology used in the experiments.
 * `2d_0.pkl`: An initial data file used for training the ground state, obtained via a fitting process.
 
 ---
@@ -40,4 +40,14 @@ This example enables simultaneous calculation for a range of $\Omega$ values (fr
 3.  Run the script:
     ```bash
     python main.py
+    ```
+---
+
+### Example 3: Adaptive Sampling Training
+
+This example runs the standalone adaptive sampling training process.
+
+1.  Run the `adaptive_sampling.py` script:
+    ```bash
+    python adaptive_sampling.py
     ```
