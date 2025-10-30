@@ -31,11 +31,11 @@ This example calculates the ground state for a single $\Omega = 0.5$ and reprodu
 This example enables simultaneous calculation for a range of $\Omega$ values (from 0.58 to 0.62) and reproduces the results shown in **Fig. 9**.
 
 1.  Open **`main.py`** and navigate to lines 28-30.
-2.  Set the parameters as follows:
+2.  Set the parameters as follows: (If you set num1 = 4, the script will calculate results at four equally spaced points in the range [o_min, o_max])
     ```python
     o_min = 0.58
     o_max = 0.62
-    num1 = 2   (If you set num1 = 4, the script will calculate results at four equally spaced points in the range [o_min, o_max].)
+    num1 = 2
     ```
 3.  Run the script:
     ```bash
