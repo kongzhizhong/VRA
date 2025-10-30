@@ -85,7 +85,7 @@ def plot_3D(model, params, step, num):
     ax.set_ylabel('Y Label')
     ax.set_zlabel('Z Label')
     '''
-    plt.savefig('D:/用户/研究生文章/BSE/实验/实验结果/' + f'exam_{num}_{step}')
+    plt.savefig('~/data/'+f'exam_{num}_{step}.png')
     # 显示图形
     # plt.show()
     plt.close()
@@ -151,7 +151,7 @@ def triangle_area(p1, p2, p3):
     return 0.5 * abs(np.cross(p2 - p1, p3 - p1))
 
 
-def generate_adaptive_mesh(G, domain=[-6, 6, -6, 6], num_points=1500, base_mesh_size=0.5):
+def generate_adaptive_mesh(G, domain=[-6, 6, -6, 6], num_points=1000, base_mesh_size=0.5):
     with pygmsh.geo.Geometry() as geom:
         # 创建矩形边界
         points = [
@@ -268,8 +268,8 @@ def main():
     startTime = time.time()
 
     model1 = Net(params, device).to(device)
-    # model1 = torch.load('大区域模型/2d_1.pkl', weights_only=False)
-    model1 = torch.load('大区域模型/0.9.pkl', weights_only=False)
+   
+    model1 = torch.load('~/0.9.pkl', weights_only=False)
 
     print("Generating network costs %s seconds." % (time.time() - startTime))
     print(params)
@@ -284,12 +284,13 @@ def main():
     compute_integrals(model1, points_np, cells, params, 501, optimizer1, scheduler1)
 
     startTime = time.time()
-    # loss1 = train1(model1, device, params, optimizer1, scheduler1, startTime, 1, 1001)
+    loss1 = train1(model1, device, params, optimizer1, scheduler1, startTime, 1, 1001)
 
-    torch.save(model1, '模型/2d_1.pkl')
-    # plot_3D(model1, params, 0, 0)
+    torch.save(model1, '~/2d_1.pkl')
+    plot_3D(model1, params, 0, 0)
 
 
 
 if __name__ == "__main__":
     main()
+
