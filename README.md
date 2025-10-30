@@ -35,7 +35,7 @@ This example enables simultaneous calculation for a range of $\Omega$ values (fr
     ```python
     o_min = 0.58
     o_max = 0.62
-    num1 = 2
+    num1 = 2   (If you set num1 = 4, the script will calculate results at four equally spaced points in the range [o_min, o_max].)
     ```
 3.  Run the script:
     ```bash
